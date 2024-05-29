@@ -12,6 +12,7 @@ export default function App() {
   //destruct step and setStep from useState array
   //every react function start from use are react hooks
   //never manually update state, only use set function to update state
+  //use const instead of let because immutablity in react
   const [step, setStep] = useState(1);
 
   function handlePrevious() {
