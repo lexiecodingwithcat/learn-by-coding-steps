@@ -20,12 +20,24 @@ export default function App() {
     if (step > 1) setStep(step - 1);
   }
   function handleNext() {
-    if (step < 3) setStep(step + 1);
+    // if (step < 3) setStep(step + 1);
+    //we can use callback function to update state based on current state
+    //s is the current state
+    if (step < 3) {
+      setStep((s) => s + 1);
+      setStep((s) => s + 1);
+      //but cannot write in this way
+      // setStep(step+1);
+      // setStep(step+1);
+      //only update current state using callback function
+    }
   }
 
   return (
     <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>&times;</button>
+      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+        &times;
+      </button>
       {isOpen && (
         <div className="steps">
           <div className="numbers">
