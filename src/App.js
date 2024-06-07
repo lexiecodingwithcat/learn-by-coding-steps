@@ -54,16 +54,14 @@ export default function App() {
             <Button
               textColor="#fff"
               bgColor="#7950F2"
-              text="Previous"
               onClick={handlePrevious}
-            />
+            > <span>👈</span>Previous </Button>
 
             <Button
               textColor="#fff"
               bgColor="#7950F2"
-              text="Next"
               onClick={handleNext}
-            />
+            > Next<span>👉</span></Button>
           </div>
         </div>
       )}
@@ -71,13 +69,14 @@ export default function App() {
   );
 }
 
-function Button({ textColor, bgColor, text, onClick }) {
+//children is a pre-defined word to child props
+function Button({ textColor, bgColor, onClick, children }) {
   return (
     <button
       style={{ backgroundColor: bgColor, color: textColor }}
       onClick={onClick}
     >
-      {text}
+      {children}
     </button>
   );
 }
