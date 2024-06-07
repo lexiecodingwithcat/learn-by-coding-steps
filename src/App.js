@@ -25,7 +25,7 @@ export default function App() {
     //s is the current state
     if (step < 3) {
       setStep((s) => s + 1);
-      setStep((s) => s + 1);
+      // setStep((s) => s + 1);
       //but cannot write in this way
       // setStep(step+1);
       // setStep(step+1);
@@ -51,21 +51,33 @@ export default function App() {
           </p>
 
           <div className="buttons">
-            <button
-              style={{ backgroundColor: "#7950F2", color: "#fff" }}
+            <Button
+              textColor="#fff"
+              bgColor="#7950F2"
+              text="Previous"
               onClick={handlePrevious}
-            >
-              Previous
-            </button>
-            <button
-              style={{ backgroundColor: "#7950F2", color: "#fff" }}
+            />
+
+            <Button
+              textColor="#fff"
+              bgColor="#7950F2"
+              text="Next"
               onClick={handleNext}
-            >
-              Next
-            </button>
+            />
           </div>
         </div>
       )}
     </>
+  );
+}
+
+function Button({ textColor, bgColor, text, onClick }) {
+  return (
+    <button
+      style={{ backgroundColor: bgColor, color: textColor }}
+      onClick={onClick}
+    >
+      {text}
+    </button>
   );
 }
